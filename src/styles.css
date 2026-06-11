@@ -356,6 +356,12 @@ h1 {
   resize: vertical;
 }
 
+.form-helper {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .form-card button {
   justify-self: start;
   cursor: pointer;

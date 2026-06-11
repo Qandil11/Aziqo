@@ -191,7 +191,6 @@ function App() {
               className="form-card"
               action={formspreeEndpoint}
               method="POST"
-              encType="multipart/form-data"
             >
               <input type="hidden" name="form_type" value="Submit CV" />
               <label>
@@ -203,16 +202,29 @@ function App() {
                 <input name="email" type="email" autoComplete="email" required />
               </label>
               <label>
-                Primary specialism
+                LinkedIn URL
                 <input
-                  name="specialism"
-                  type="text"
-                  placeholder="Mobile, Backend, Cloud, DevOps, AI..."
+                  name="linkedin_url"
+                  type="url"
+                  placeholder="https://www.linkedin.com/in/your-profile"
                 />
               </label>
               <label>
-                CV
-                <input name="cv" type="file" accept=".pdf,.doc,.docx" />
+                Portfolio/GitHub URL
+                <input
+                  name="portfolio_url"
+                  type="url"
+                  placeholder="https://github.com/your-profile"
+                />
+              </label>
+              <label>
+                Role interested in
+                <input
+                  name="role_interested_in"
+                  type="text"
+                  placeholder="Mobile Engineer, Backend Engineer, DevOps..."
+                  required
+                />
               </label>
               <label>
                 Message
@@ -223,6 +235,10 @@ function App() {
                   required
                 />
               </label>
+              <p className="form-helper">
+                Please email your CV directly to contact@aziqo.co.uk after
+                submitting this form.
+              </p>
               <button className="button button-primary" type="submit">
                 Submit CV
               </button>
