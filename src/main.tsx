@@ -4,11 +4,9 @@ import "./styles.css";
 
 const contactEmail = "contact@aziqo.co.uk";
 const websiteUrl = "https://aziqo.co.uk";
-const linkedInUrl = "PASTE_AZIQO_LINKEDIN_COMPANY_PAGE_URL_HERE";
+const linkedInUrl = "https://www.linkedin.com/company/120674408/";
 const location = "Glasgow, United Kingdom";
-const contactFormAction = "PASTE_CONTACT_FORMSPREE_URL_HERE";
-const hireTalentFormAction = "PASTE_HIRE_TALENT_FORMSPREE_URL_HERE";
-const submitCvFormAction = "PASTE_SUBMIT_CV_FORMSPREE_URL_HERE";
+const formspreeEndpoint = "https://formspree.io/f/meewrewp";
 
 const services = [
   "Mobile Engineering",
@@ -148,7 +146,8 @@ function App() {
                 across mobile, software, cloud, DevOps and AI roles.
               </p>
             </div>
-            <form className="form-card" action={hireTalentFormAction} method="POST">
+            <form className="form-card" action={formspreeEndpoint} method="POST">
+              <input type="hidden" name="form_type" value="Hire Talent" />
               <label>
                 Name
                 <input name="name" type="text" autoComplete="name" required />
@@ -190,10 +189,11 @@ function App() {
             </div>
             <form
               className="form-card"
-              action={submitCvFormAction}
+              action={formspreeEndpoint}
               method="POST"
               encType="multipart/form-data"
             >
+              <input type="hidden" name="form_type" value="Submit CV" />
               <label>
                 Name
                 <input name="name" type="text" autoComplete="name" required />
@@ -254,7 +254,8 @@ function App() {
                 <p>Location</p>
                 <span className="contact-value">{location}</span>
               </div>
-              <form className="form-card" action={contactFormAction} method="POST">
+              <form className="form-card" action={formspreeEndpoint} method="POST">
+                <input type="hidden" name="form_type" value="Contact Form" />
                 <label>
                   Name
                   <input name="name" type="text" autoComplete="name" required />

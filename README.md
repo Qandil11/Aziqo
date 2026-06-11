@@ -21,9 +21,9 @@ The production site is generated in `dist/`.
 
 ## Contact Forms
 
-The Hire Talent, Submit CV and Contact forms are static Formspree forms. Their
-endpoints are configured in `src/main.tsx` as `hireTalentFormAction`,
-`submitCvFormAction` and `contactFormAction`.
+The Hire Talent, Submit CV and Contact forms are static Formspree forms. They
+share one endpoint configured in `src/main.tsx` as `formspreeEndpoint`, with a
+hidden `form_type` field identifying the submitted form.
 
 ## Deploy To GitHub Pages
 
