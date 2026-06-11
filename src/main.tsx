@@ -32,6 +32,47 @@ const strengths = [
 ];
 
 function App() {
+  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const submitButton = form.querySelector<HTMLButtonElement>(
+      'button[type="submit"]',
+    );
+    const originalButtonText = submitButton?.textContent ?? "";
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      form.reset();
+      window.alert("Thank you. Your message has been sent.");
+    } catch {
+      window.alert(
+        "Sorry, the form could not be sent. Please email contact@aziqo.co.uk directly.",
+      );
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+    }
+  };
+
   return (
     <>
       <header className="site-header">
@@ -146,7 +187,12 @@ function App() {
                 across mobile, software, cloud, DevOps and AI roles.
               </p>
             </div>
-            <form className="form-card" action={formspreeEndpoint} method="POST">
+            <form
+              className="form-card"
+              action={formspreeEndpoint}
+              method="POST"
+              onSubmit={handleFormSubmit}
+            >
               <input type="hidden" name="form_type" value="Hire Talent" />
               <label>
                 Name
@@ -191,6 +237,7 @@ function App() {
               className="form-card"
               action={formspreeEndpoint}
               method="POST"
+              onSubmit={handleFormSubmit}
             >
               <input type="hidden" name="form_type" value="Submit CV" />
               <label>
@@ -270,7 +317,12 @@ function App() {
                 <p>Location</p>
                 <span className="contact-value">{location}</span>
               </div>
-              <form className="form-card" action={formspreeEndpoint} method="POST">
+              <form
+                className="form-card"
+                action={formspreeEndpoint}
+                method="POST"
+                onSubmit={handleFormSubmit}
+              >
                 <input type="hidden" name="form_type" value="Contact Form" />
                 <label>
                   Name
