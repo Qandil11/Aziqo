@@ -19,6 +19,12 @@ npm run build
 
 The production site is generated in `dist/`.
 
+## Contact Forms
+
+The Hire Talent, Submit CV and Contact forms are static Formspree forms. Their
+endpoints are configured in `src/main.tsx` as `hireTalentFormAction`,
+`submitCvFormAction` and `contactFormAction`.
+
 ## Deploy To GitHub Pages
 
 This repository includes a GitHub Actions workflow at `.github/workflows/deploy.yml`.

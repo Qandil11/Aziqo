@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aziqo.co.uk/sitemap.xml
