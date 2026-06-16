@@ -9,24 +9,57 @@ const location = "Glasgow, United Kingdom";
 const formspreeEndpoint = "https://formspree.io/f/meewrewp";
 
 const services = [
-  "Mobile Engineering",
-  "Android Development",
-  "iOS Development",
-  "Flutter & Cross-Platform Development",
-  "React Native Development",
-  "Kotlin Multiplatform",
-  "Backend Engineering",
-  "Frontend Engineering",
-  "Full-Stack Engineering",
-  "QA & Test Automation",
-  "Cloud & DevOps Engineering",
-  "AI & Machine Learning Recruitment",
+  "Specialist technology hiring",
+  "Mobile engineering talent sourcing",
+  "Software, cloud, DevOps and AI recruitment",
+  "Care and support staffing",
+  "Warehouse and logistics recruitment",
+  "Industrial and skilled trades hiring",
+  "Candidate shortlisting and screening",
+  "Talent mapping for high-demand roles",
+  "Permanent workforce recruitment",
+];
+
+const sectors = [
+  {
+    title: "Technology Recruitment",
+    roles: [
+      "Mobile Engineering",
+      "Software Engineering",
+      "Cloud & DevOps",
+      "AI & Data roles",
+    ],
+  },
+  {
+    title: "Care & Support Recruitment",
+    roles: ["Care Assistants", "Support Workers", "Healthcare Assistants"],
+  },
+  {
+    title: "Warehouse & Logistics Recruitment",
+    roles: ["Warehouse Operatives", "Pickers/Packers", "Drivers/Logistics staff"],
+  },
+  {
+    title: "Industrial & Skilled Trades Recruitment",
+    roles: [
+      "CNC Operators/Millers",
+      "Mechanical & Electrical Engineers",
+      "Technical/Engineering roles",
+    ],
+  },
+];
+
+const sectorOptions = [
+  "Technology",
+  "Care & Support",
+  "Warehouse & Logistics",
+  "Industrial & Skilled Trades",
+  "Other",
 ];
 
 const strengths = [
   "Built with real software engineering experience",
   "Deep mobile engineering specialism",
-  "Technical understanding beyond keyword matching",
+  "Practical hiring support across high-demand UK sectors",
   "Strong candidate-led approach",
   "Professional, responsive and relationship-focused",
 ];
@@ -82,6 +115,7 @@ function App() {
           </a>
           <div className="nav-links">
             <a href="#about-us">About Us</a>
+            <a href="#sectors">Sectors</a>
             <a href="#services">Services</a>
             <a href="#hire-talent">Hire Talent</a>
             <a href="#submit-cv">Submit CV</a>
@@ -97,11 +131,12 @@ function App() {
             <div className="hero-copy">
               <p className="eyebrow">Specialist technology talent partner</p>
               <h1>AZIQO</h1>
-              <h2>Specialist Mobile, Software, Cloud, DevOps & AI Talent</h2>
+              <h2>Technology-led recruitment for high-demand UK sectors</h2>
               <p>
-                AZIQO is a specialist technology talent partner focused on
-                Mobile, Software, Cloud, DevOps and AI recruitment across
-                startups, scale-ups and enterprise organisations.
+                AZIQO combines deep technology recruitment expertise with
+                practical hiring support across Technology, Care, Warehouse,
+                Logistics and Industrial recruitment. Mobile Engineering remains
+                our strongest specialist area.
               </p>
               <div className="hero-actions" aria-label="Primary actions">
                 <a className="button button-primary" href="#hire-talent">
@@ -117,8 +152,8 @@ function App() {
               <span>Software Engineering</span>
               <span>Cloud & DevOps</span>
               <span>AI Recruitment</span>
-              <span>Frontend & Backend</span>
-              <span>QA & Test Automation</span>
+              <span>Care & Support</span>
+              <span>Warehouse & Industrial</span>
             </aside>
           </div>
         </section>
@@ -130,23 +165,47 @@ function App() {
               <h2>Technical hiring, understood properly.</h2>
             </div>
             <p className="lead">
-              AZIQO is a specialist technology talent partner focused on Mobile,
-              Software, Cloud, DevOps and AI recruitment across startups,
-              scale-ups and enterprise organisations. Mobile engineering is our
-              flagship strength, but our work spans the wider engineering teams
-              that build, ship and scale modern technology products. Built with
-              real software engineering experience, we understand technical roles
-              beyond keywords and support hiring conversations with clarity,
-              precision and care.
+              AZIQO is a UK-based recruitment partner built around specialist
+              technology hiring expertise, with Mobile Engineering as our
+              flagship strength. We also support employers across care,
+              warehouse, logistics, industrial and skilled trades recruitment,
+              bringing the same clarity, responsiveness and role understanding
+              to every search.
             </p>
           </div>
         </section>
 
-        <section className="section section-muted" id="services">
+        <section className="section section-muted" id="sectors">
+          <div className="container">
+            <div className="section-heading">
+              <p className="section-label">Sectors We Cover</p>
+              <h2>
+                Deep technology expertise, with practical reach across essential
+                workforce sectors.
+              </h2>
+            </div>
+            <div className="sector-grid">
+              {sectors.map((sector) => (
+                <article className="sector-card" key={sector.title}>
+                  <h3>{sector.title}</h3>
+                  <ul>
+                    {sector.roles.map((role) => (
+                      <li key={role}>{role}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="services">
           <div className="container">
             <div className="section-heading">
               <p className="section-label">Services</p>
-              <h2>Focused talent support across product and engineering teams.</h2>
+              <h2>
+                Specialist tech hiring and broader workforce recruitment support.
+              </h2>
             </div>
             <div className="service-grid">
               {services.map((service) => (
@@ -163,7 +222,7 @@ function App() {
           <div className="container two-column">
             <div>
               <p className="section-label">Why AZIQO</p>
-              <h2>A specialist partner for technical roles where detail matters.</h2>
+              <h2>A specialist partner for roles where detail matters.</h2>
             </div>
             <div className="check-list">
               {strengths.map((strength) => (
@@ -183,8 +242,9 @@ function App() {
               <h2>Find specialist technology talent with confidence.</h2>
               <p className="lead">
                 Tell us about the role, team and hiring priorities. AZIQO can
-                support permanent hiring, talent mapping and specialist sourcing
-                across mobile, software, cloud, DevOps and AI roles.
+                support specialist technology hiring and broader workforce
+                recruitment across care, warehouse, logistics, industrial and
+                skilled trades roles.
               </p>
             </div>
             <form
@@ -205,6 +265,19 @@ function App() {
               <label>
                 Company
                 <input name="company" type="text" autoComplete="organization" />
+              </label>
+              <label>
+                Sector
+                <select name="sector" required defaultValue="">
+                  <option value="" disabled>
+                    Select a sector
+                  </option>
+                  {sectorOptions.map((sector) => (
+                    <option value={sector} key={sector}>
+                      {sector}
+                    </option>
+                  ))}
+                </select>
               </label>
               <label>
                 Hiring requirement
@@ -228,9 +301,9 @@ function App() {
               <p className="section-label">Submit CV</p>
               <h2>Share your details for relevant technology opportunities.</h2>
               <p className="lead">
-                If you work across mobile, software, cloud, DevOps, QA or AI,
-                you can send your profile for future opportunities that match
-                your experience and goals.
+                If you work across technology, care, warehouse, logistics,
+                industrial or skilled trades roles, you can send your details
+                for future opportunities that match your experience and goals.
               </p>
             </div>
             <form
@@ -247,6 +320,19 @@ function App() {
               <label>
                 Email
                 <input name="email" type="email" autoComplete="email" required />
+              </label>
+              <label>
+                Role Category
+                <select name="role_category" required defaultValue="">
+                  <option value="" disabled>
+                    Select a category
+                  </option>
+                  {sectorOptions.map((sector) => (
+                    <option value={sector} key={sector}>
+                      {sector}
+                    </option>
+                  ))}
+                </select>
               </label>
               <label>
                 LinkedIn URL
@@ -269,7 +355,7 @@ function App() {
                 <input
                   name="role_interested_in"
                   type="text"
-                  placeholder="Mobile Engineer, Backend Engineer, DevOps..."
+                  placeholder="Mobile Engineer, Support Worker, Warehouse Operative..."
                   required
                 />
               </label>
@@ -300,8 +386,8 @@ function App() {
               <h2>Start a conversation with AZIQO.</h2>
               <p className="lead">
                 For hiring support, talent mapping, or a confidential discussion
-                about mobile, software, cloud, DevOps or AI recruitment, get in
-                touch.
+                about technology, care, warehouse, logistics or industrial
+                recruitment, get in touch.
               </p>
             </div>
             <div className="contact-stack">
@@ -355,6 +441,7 @@ function App() {
           </div>
           <div className="footer-links" aria-label="Footer navigation">
             <a href="#about-us">About Us</a>
+            <a href="#sectors">Sectors</a>
             <a href="#hire-talent">Hire Talent</a>
             <a href="#submit-cv">Submit CV</a>
             <a href="#contact">Contact</a>
