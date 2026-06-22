@@ -49,6 +49,7 @@ const sectors = [
 ];
 
 const sectorOptions = [
+  "CNC Engineering",
   "Technology",
   "Care & Support",
   "Warehouse & Logistics",
