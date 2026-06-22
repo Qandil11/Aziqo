@@ -9,58 +9,72 @@ const location = "Glasgow, United Kingdom";
 const formspreeEndpoint = "https://formspree.io/f/meewrewp";
 
 const services = [
-  "Specialist technology hiring",
+  "Accounting and finance recruitment",
+  "CNC engineering recruitment",
+  "Software engineering recruitment",
   "Mobile engineering talent sourcing",
-  "Software, cloud, DevOps and AI recruitment",
-  "Care and support staffing",
-  "Warehouse and logistics recruitment",
-  "Industrial and skilled trades hiring",
   "Candidate shortlisting and screening",
-  "Talent mapping for high-demand roles",
-  "Permanent workforce recruitment",
+  "Talent mapping for specialist roles",
+  "Permanent recruitment support",
 ];
 
 const sectors = [
   {
-    title: "Technology Recruitment",
+    title: "Accounting & Finance Recruitment",
     roles: [
-      "Mobile Engineering",
-      "Software Engineering",
-      "Cloud & DevOps",
-      "AI & Data roles",
+      "Accounts Assistants",
+      "Bookkeepers",
+      "Payroll",
+      "Credit Control",
+      "Finance Assistants",
+      "Management Accountants",
     ],
   },
   {
-    title: "Care & Support Recruitment",
-    roles: ["Care Assistants", "Support Workers", "Healthcare Assistants"],
-  },
-  {
-    title: "Warehouse & Logistics Recruitment",
-    roles: ["Warehouse Operatives", "Pickers/Packers", "Drivers/Logistics staff"],
-  },
-  {
-    title: "Industrial & Skilled Trades Recruitment",
+    title: "CNC Engineering",
     roles: [
-      "CNC Operators/Millers",
-      "Mechanical & Electrical Engineers",
-      "Technical/Engineering roles",
+      "CNC Operators",
+      "CNC Millers",
+      "CNC Turners",
+      "Precision Engineering",
+      "Manufacturing engineering roles",
+    ],
+  },
+  {
+    title: "Software Engineering",
+    roles: [
+      "Backend Engineering",
+      "Frontend Engineering",
+      "Full-Stack Engineering",
+      "Cloud & DevOps",
+      "AI & Data",
+      "QA & Test Automation",
+    ],
+  },
+  {
+    title: "Mobile Engineering",
+    roles: [
+      "Android Development",
+      "iOS Development",
+      "Kotlin Multiplatform",
+      "React Native",
+      "Flutter & Cross-platform",
     ],
   },
 ];
 
 const sectorOptions = [
+  "Accounting & Finance Recruitment",
   "CNC Engineering",
-  "Technology",
-  "Care & Support",
-  "Warehouse & Logistics",
-  "Industrial & Skilled Trades",
+  "Software Engineering",
+  "Mobile Engineering",
   "Other",
 ];
 
 const strengths = [
   "Built with real software engineering experience",
   "Deep mobile engineering specialism",
-  "Practical hiring support across high-demand UK sectors",
+  "Focused support across accounting, CNC, software and mobile hiring",
   "Strong candidate-led approach",
   "Professional, responsive and relationship-focused",
 ];
@@ -132,12 +146,12 @@ function App() {
             <div className="hero-copy">
               <p className="eyebrow">Specialist technology talent partner</p>
               <h1>AZIQO</h1>
-              <h2>Technology-led recruitment for high-demand UK sectors</h2>
+              <h2>Specialist recruitment across finance, engineering and technology</h2>
               <p>
                 AZIQO combines deep technology recruitment expertise with
-                practical hiring support across Technology, Care, Warehouse,
-                Logistics and Industrial recruitment. Mobile Engineering remains
-                our strongest specialist area.
+                practical hiring support across Accounting & Finance, CNC
+                Engineering, Software Engineering and Mobile Engineering. Mobile
+                Engineering remains our strongest specialist area.
               </p>
               <div className="hero-actions" aria-label="Primary actions">
                 <a className="button button-primary" href="#hire-talent">
@@ -149,13 +163,10 @@ function App() {
               </div>
             </div>
             <aside className="hero-panel" aria-label="AZIQO focus areas">
+              <span>Accounting & Finance Recruitment</span>
               <span>CNC Engineering</span>
-              <span>Mobile Engineering</span>
               <span>Software Engineering</span>
-              <span>Cloud & DevOps</span>
-              <span>AI Recruitment</span>
-              <span>Care & Support</span>
-              <span>Warehouse & Industrial</span>
+              <span>Mobile Engineering</span>
             </aside>
           </div>
         </section>
@@ -169,8 +180,8 @@ function App() {
             <p className="lead">
               AZIQO is a UK-based recruitment partner built around specialist
               technology hiring expertise, with Mobile Engineering as our
-              flagship strength. We also support employers across care,
-              warehouse, logistics, industrial and skilled trades recruitment,
+              flagship strength. We also support employers across Accounting &
+              Finance, CNC Engineering and Software Engineering recruitment,
               bringing the same clarity, responsiveness and role understanding
               to every search.
             </p>
@@ -182,8 +193,8 @@ function App() {
             <div className="section-heading">
               <p className="section-label">Sectors We Cover</p>
               <h2>
-                Deep technology expertise, with practical reach across essential
-                workforce sectors.
+                Focused hiring support across accounting, CNC, software and
+                mobile roles.
               </h2>
             </div>
             <div className="sector-grid">
@@ -206,7 +217,8 @@ function App() {
             <div className="section-heading">
               <p className="section-label">Services</p>
               <h2>
-                Specialist tech hiring and broader workforce recruitment support.
+                Specialist recruitment support for finance, engineering and
+                technology teams.
               </h2>
             </div>
             <div className="service-grid">
@@ -244,9 +256,8 @@ function App() {
               <h2>Find specialist technology talent with confidence.</h2>
               <p className="lead">
                 Tell us about the role, team and hiring priorities. AZIQO can
-                support specialist technology hiring and broader workforce
-                recruitment across care, warehouse, logistics, industrial and
-                skilled trades roles.
+                support hiring across Accounting & Finance, CNC Engineering,
+                Software Engineering and Mobile Engineering roles.
               </p>
             </div>
             <form
@@ -303,9 +314,9 @@ function App() {
               <p className="section-label">Submit CV</p>
               <h2>Share your details for relevant technology opportunities.</h2>
               <p className="lead">
-                If you work across technology, care, warehouse, logistics,
-                industrial or skilled trades roles, you can send your details
-                for future opportunities that match your experience and goals.
+                If you work across accounting, CNC, software or mobile roles,
+                you can send your details for future opportunities that match
+                your experience and goals.
               </p>
             </div>
             <form
@@ -357,7 +368,7 @@ function App() {
                 <input
                   name="role_interested_in"
                   type="text"
-                  placeholder="Mobile Engineer, Support Worker, Warehouse Operative..."
+                  placeholder="Accounts Assistant, CNC Miller, Backend Engineer..."
                   required
                 />
               </label>
@@ -388,7 +399,7 @@ function App() {
               <h2>Start a conversation with AZIQO.</h2>
               <p className="lead">
                 For hiring support, talent mapping, or a confidential discussion
-                about technology, care, warehouse, logistics or industrial
+                about accounting, CNC engineering, software or mobile
                 recruitment, get in touch.
               </p>
             </div>
