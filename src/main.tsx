@@ -149,6 +149,7 @@ function App() {
               </div>
             </div>
             <aside className="hero-panel" aria-label="AZIQO focus areas">
+              <span>CNC Engineering</span>
               <span>Mobile Engineering</span>
               <span>Software Engineering</span>
               <span>Cloud & DevOps</span>
