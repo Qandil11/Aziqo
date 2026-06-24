@@ -197,7 +197,8 @@ function App() {
             <aside className="hero-panel" aria-label="AZIQO focus areas">
               {pillars.map((pillar) => (
                 <a href={pillar.href} key={pillar.title}>
-                  {pillar.title}
+                  <img src={pillar.image} alt="" />
+                  <span>{pillar.title}</span>
                 </a>
               ))}
             </aside>
