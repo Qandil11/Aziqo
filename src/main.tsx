@@ -12,21 +12,18 @@ const pillars = [
   {
     title: "Recruitment",
     href: "#recruitment",
-    icon: "search",
     description:
       "Specialist hiring support across accounting, CNC engineering, software and mobile roles.",
   },
   {
     title: "UK Education Consultancy",
     href: "#education-consultancy",
-    icon: "education",
     description:
       "Guidance for students planning UK study, from course selection to application preparation.",
   },
   {
     title: "Software & IT Services",
     href: "#software-it-services",
-    icon: "code",
     description:
       "Practical website, app, software and technical support for growing organisations.",
   },
@@ -35,7 +32,6 @@ const pillars = [
 const recruitmentSectors = [
   {
     title: "Accounting & Finance Recruitment",
-    icon: "finance",
     roles: [
       "Accounts Assistants",
       "Bookkeepers",
@@ -47,7 +43,6 @@ const recruitmentSectors = [
   },
   {
     title: "CNC Engineering",
-    icon: "cnc",
     roles: [
       "CNC Operators",
       "CNC Millers",
@@ -58,7 +53,6 @@ const recruitmentSectors = [
   },
   {
     title: "Software Engineering",
-    icon: "code",
     roles: [
       "Backend Engineering",
       "Frontend Engineering",
@@ -70,7 +64,6 @@ const recruitmentSectors = [
   },
   {
     title: "Mobile Engineering",
-    icon: "mobile",
     roles: [
       "Android Development",
       "iOS Development",
@@ -114,86 +107,6 @@ const strengths = [
   "Strong candidate-led approach",
   "Professional, responsive and relationship-focused",
 ];
-
-type IconName = "search" | "education" | "code" | "finance" | "cnc" | "mobile";
-
-function Icon({ name }: { name: IconName }) {
-  return (
-    <svg className="icon" viewBox="0 0 48 48" aria-hidden="true">
-      {name === "search" && (
-        <>
-          <circle cx="20" cy="20" r="10" />
-          <path d="M28 28l10 10" />
-          <path d="M14 20h12" />
-        </>
-      )}
-      {name === "education" && (
-        <>
-          <path d="M6 18l18-8 18 8-18 8-18-8z" />
-          <path d="M14 23v8c4 4 16 4 20 0v-8" />
-          <path d="M40 19v12" />
-        </>
-      )}
-      {name === "code" && (
-        <>
-          <path d="M18 14l-9 10 9 10" />
-          <path d="M30 14l9 10-9 10" />
-          <path d="M27 10l-6 28" />
-        </>
-      )}
-      {name === "finance" && (
-        <>
-          <path d="M10 36h28" />
-          <path d="M14 36V22" />
-          <path d="M24 36V12" />
-          <path d="M34 36V18" />
-          <path d="M10 26l8-8 7 5 12-12" />
-        </>
-      )}
-      {name === "cnc" && (
-        <>
-          <path d="M10 34h28" />
-          <path d="M14 34V16h20v18" />
-          <path d="M19 16v-5h10v5" />
-          <path d="M20 24h8" />
-          <path d="M28 24l5 5" />
-        </>
-      )}
-      {name === "mobile" && (
-        <>
-          <rect x="15" y="7" width="18" height="34" rx="3" />
-          <path d="M21 12h6" />
-          <path d="M22 36h4" />
-        </>
-      )}
-    </svg>
-  );
-}
-
-function HeroIllustration() {
-  return (
-    <svg className="hero-illustration" viewBox="0 0 420 220" aria-hidden="true">
-      <rect className="illustration-bg" x="16" y="16" width="388" height="188" rx="14" />
-      <path className="illustration-line" d="M112 108h62M246 108h62" />
-      <path className="illustration-line" d="M210 80v-28M210 136v32" />
-      <g>
-        <rect className="illustration-card" x="42" y="68" width="92" height="80" rx="10" />
-        <path className="illustration-mark" d="M70 105h36M70 121h24" />
-        <circle className="illustration-dot" cx="88" cy="88" r="10" />
-      </g>
-      <g>
-        <rect className="illustration-card" x="164" y="52" width="92" height="112" rx="10" />
-        <path className="illustration-mark" d="M190 96l-14 13 14 13M230 96l14 13-14 13" />
-        <path className="illustration-mark" d="M216 88l-12 42" />
-      </g>
-      <g>
-        <rect className="illustration-card" x="286" y="68" width="92" height="80" rx="10" />
-        <path className="illustration-mark" d="M315 92l17-7 17 7-17 7-17-7z" />
-        <path className="illustration-mark" d="M321 104v16c5 5 17 5 22 0v-16" />
-      </g>
-    </svg>
-  );
-}
 
 function App() {
   const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -279,7 +192,6 @@ function App() {
               </div>
             </div>
             <aside className="hero-panel" aria-label="AZIQO focus areas">
-              <HeroIllustration />
               {pillars.map((pillar) => (
                 <a href={pillar.href} key={pillar.title}>
                   {pillar.title}
@@ -314,7 +226,7 @@ function App() {
             <div className="pillar-grid">
               {pillars.map((pillar) => (
                 <a className="pillar-card" href={pillar.href} key={pillar.title}>
-                  <Icon name={pillar.icon as IconName} />
+                  <span className="card-marker" aria-hidden="true" />
                   <h3>{pillar.title}</h3>
                   <p>{pillar.description}</p>
                 </a>
@@ -332,7 +244,6 @@ function App() {
             <div className="sector-grid">
               {recruitmentSectors.map((sector) => (
                 <article className="sector-card" key={sector.title}>
-                  <Icon name={sector.icon as IconName} />
                   <h3>{sector.title}</h3>
                   <ul>
                     {sector.roles.map((role) => (
