@@ -12,18 +12,21 @@ const pillars = [
   {
     title: "Recruitment",
     href: "#recruitment",
+    image: "/images/recruitment.jpg",
     description:
       "Specialist hiring support across accounting, CNC engineering, software and mobile roles.",
   },
   {
     title: "UK Education Consultancy",
     href: "#education-consultancy",
+    image: "/images/education-consultancy.jpg",
     description:
       "Guidance for students planning UK study, from course selection to application preparation.",
   },
   {
     title: "Software & IT Services",
     href: "#software-it-services",
+    image: "/images/software-it-services.jpg",
     description:
       "Practical website, app, software and technical support for growing organisations.",
   },
@@ -226,6 +229,7 @@ function App() {
             <div className="pillar-grid">
               {pillars.map((pillar) => (
                 <a className="pillar-card" href={pillar.href} key={pillar.title}>
+                  <img src={pillar.image} alt="" loading="lazy" />
                   <span className="card-marker" aria-hidden="true" />
                   <h3>{pillar.title}</h3>
                   <p>{pillar.description}</p>

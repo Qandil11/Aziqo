@@ -233,8 +233,26 @@ h1 {
   min-height: 220px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 24px;
+  overflow: hidden;
+  padding: 0 0 24px;
   background: var(--white);
+}
+
+.pillar-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.pillar-card .card-marker,
+.pillar-card h3,
+.pillar-card p {
+  margin-inline: 24px;
+}
+
+.pillar-card .card-marker {
+  margin-top: 24px;
 }
 
 .pillar-card h3 {
