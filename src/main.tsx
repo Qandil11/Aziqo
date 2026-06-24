@@ -8,17 +8,28 @@ const linkedInUrl = "https://www.linkedin.com/company/120674408/";
 const location = "Glasgow, United Kingdom";
 const formspreeEndpoint = "https://formspree.io/f/meewrewp";
 
-const services = [
-  "Accounting and finance recruitment",
-  "CNC engineering recruitment",
-  "Software engineering recruitment",
-  "Mobile engineering talent sourcing",
-  "Candidate shortlisting and screening",
-  "Talent mapping for specialist roles",
-  "Permanent recruitment support",
+const pillars = [
+  {
+    title: "Recruitment",
+    href: "#recruitment",
+    description:
+      "Specialist hiring support across accounting, CNC engineering, software and mobile roles.",
+  },
+  {
+    title: "UK Education Consultancy",
+    href: "#education-consultancy",
+    description:
+      "Guidance for students planning UK study, from course selection to application preparation.",
+  },
+  {
+    title: "Software & IT Services",
+    href: "#software-it-services",
+    description:
+      "Practical website, app, software and technical support for growing organisations.",
+  },
 ];
 
-const sectors = [
+const recruitmentSectors = [
   {
     title: "Accounting & Finance Recruitment",
     roles: [
@@ -63,6 +74,24 @@ const sectors = [
   },
 ];
 
+const educationServices = [
+  "UK university admissions guidance",
+  "Course and university selection",
+  "Personal statement support",
+  "Application documentation support",
+  "Student visa guidance and signposting",
+  "Pre-arrival guidance for international students",
+];
+
+const softwareServices = [
+  "Website development",
+  "Mobile app development",
+  "MVP and product build support",
+  "Business software support",
+  "Technical consulting",
+  "Cloud and software delivery support",
+];
+
 const sectorOptions = [
   "Accounting & Finance Recruitment",
   "CNC Engineering",
@@ -74,7 +103,7 @@ const sectorOptions = [
 const strengths = [
   "Built with real software engineering experience",
   "Deep mobile engineering specialism",
-  "Focused support across accounting, CNC, software and mobile hiring",
+  "Focused recruitment, education and software service support",
   "Strong candidate-led approach",
   "Professional, responsive and relationship-focused",
 ];
@@ -130,11 +159,12 @@ function App() {
           </a>
           <div className="nav-links">
             <a href="#about-us">About Us</a>
-            <a href="#sectors">Sectors</a>
-            <a href="#services">Services</a>
+            <a href="#pillars">Services</a>
+            <a href="#recruitment">Recruitment</a>
+            <a href="#education-consultancy">Education</a>
+            <a href="#software-it-services">Software & IT</a>
             <a href="#hire-talent">Hire Talent</a>
             <a href="#submit-cv">Submit CV</a>
-            <a href="#why-aziqo">Why AZIQO</a>
             <a href="#contact">Contact</a>
           </div>
         </nav>
@@ -144,14 +174,13 @@ function App() {
         <section className="hero section" id="home">
           <div className="container hero-grid">
             <div className="hero-copy">
-              <p className="eyebrow">Specialist technology talent partner</p>
+              <p className="eyebrow">Recruitment, education and software services</p>
               <h1>AZIQO</h1>
-              <h2>Specialist recruitment across finance, engineering and technology</h2>
+              <h2>Practical UK business and technology support</h2>
               <p>
-                AZIQO combines deep technology recruitment expertise with
-                practical hiring support across Accounting & Finance, CNC
-                Engineering, Software Engineering and Mobile Engineering. Mobile
-                Engineering remains our strongest specialist area.
+                AZIQO supports clients across recruitment, UK education
+                consultancy, and Software & IT services, combining practical
+                business support with strong technology expertise.
               </p>
               <div className="hero-actions" aria-label="Primary actions">
                 <a className="button button-primary" href="#hire-talent">
@@ -163,10 +192,11 @@ function App() {
               </div>
             </div>
             <aside className="hero-panel" aria-label="AZIQO focus areas">
-              <span>Accounting & Finance Recruitment</span>
-              <span>CNC Engineering</span>
-              <span>Software Engineering</span>
-              <span>Mobile Engineering</span>
+              {pillars.map((pillar) => (
+                <a href={pillar.href} key={pillar.title}>
+                  {pillar.title}
+                </a>
+              ))}
             </aside>
           </div>
         </section>
@@ -178,27 +208,41 @@ function App() {
               <h2>Technical hiring, understood properly.</h2>
             </div>
             <p className="lead">
-              AZIQO is a UK-based recruitment partner built around specialist
-              technology hiring expertise, with Mobile Engineering as our
-              flagship strength. We also support employers across Accounting &
-              Finance, CNC Engineering and Software Engineering recruitment,
-              bringing the same clarity, responsiveness and role understanding
-              to every search.
+              AZIQO is a UK-based partner built around specialist technology
+              expertise, with Mobile Engineering as a flagship strength. We
+              support employers with recruitment, students with UK education
+              consultancy, and organisations with practical Software & IT
+              services.
             </p>
           </div>
         </section>
 
-        <section className="section section-muted" id="sectors">
+        <section className="section section-muted" id="pillars">
           <div className="container">
             <div className="section-heading">
-              <p className="section-label">Sectors We Cover</p>
-              <h2>
-                Focused hiring support across accounting, CNC, software and
-                mobile roles.
-              </h2>
+              <p className="section-label">What We Do</p>
+              <h2>Three clear service areas, built around practical outcomes.</h2>
+            </div>
+            <div className="pillar-grid">
+              {pillars.map((pillar) => (
+                <a className="pillar-card" href={pillar.href} key={pillar.title}>
+                  <span className="card-marker" aria-hidden="true" />
+                  <h3>{pillar.title}</h3>
+                  <p>{pillar.description}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="recruitment">
+          <div className="container">
+            <div className="section-heading">
+              <p className="section-label">Recruitment</p>
+              <h2>Specialist hiring support across finance, engineering and technology.</h2>
             </div>
             <div className="sector-grid">
-              {sectors.map((sector) => (
+              {recruitmentSectors.map((sector) => (
                 <article className="sector-card" key={sector.title}>
                   <h3>{sector.title}</h3>
                   <ul>
@@ -212,17 +256,33 @@ function App() {
           </div>
         </section>
 
-        <section className="section" id="services">
+        <section className="section section-muted" id="education-consultancy">
           <div className="container">
             <div className="section-heading">
-              <p className="section-label">Services</p>
+              <p className="section-label">UK Education Consultancy</p>
               <h2>
-                Specialist recruitment support for finance, engineering and
-                technology teams.
+                Student-focused support for UK admissions and study planning.
               </h2>
             </div>
             <div className="service-grid">
-              {services.map((service) => (
+              {educationServices.map((service) => (
+                <article className="card" key={service}>
+                  <span className="card-marker" aria-hidden="true" />
+                  <h3>{service}</h3>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="software-it-services">
+          <div className="container">
+            <div className="section-heading">
+              <p className="section-label">Software & IT Services</p>
+              <h2>Practical technical support for websites, apps and software delivery.</h2>
+            </div>
+            <div className="service-grid">
+              {softwareServices.map((service) => (
                 <article className="card" key={service}>
                   <span className="card-marker" aria-hidden="true" />
                   <h3>{service}</h3>
@@ -236,7 +296,7 @@ function App() {
           <div className="container two-column">
             <div>
               <p className="section-label">Why AZIQO</p>
-              <h2>A specialist partner for roles where detail matters.</h2>
+              <h2>A practical partner for work where detail matters.</h2>
             </div>
             <div className="check-list">
               {strengths.map((strength) => (
@@ -253,7 +313,7 @@ function App() {
           <div className="container contact-layout">
             <div>
               <p className="section-label">Hire Talent</p>
-              <h2>Find specialist technology talent with confidence.</h2>
+              <h2>Find specialist talent with confidence.</h2>
               <p className="lead">
                 Tell us about the role, team and hiring priorities. AZIQO can
                 support hiring across Accounting & Finance, CNC Engineering,
@@ -398,9 +458,9 @@ function App() {
               <p className="section-label">Contact</p>
               <h2>Start a conversation with AZIQO.</h2>
               <p className="lead">
-                For hiring support, talent mapping, or a confidential discussion
-                about accounting, CNC engineering, software or mobile
-                recruitment, get in touch.
+                For recruitment support, UK education consultancy, Software & IT
+                services, or a confidential discussion about your next step, get
+                in touch.
               </p>
             </div>
             <div className="contact-stack">
@@ -454,7 +514,10 @@ function App() {
           </div>
           <div className="footer-links" aria-label="Footer navigation">
             <a href="#about-us">About Us</a>
-            <a href="#sectors">Sectors</a>
+            <a href="#pillars">Services</a>
+            <a href="#recruitment">Recruitment</a>
+            <a href="#education-consultancy">Education</a>
+            <a href="#software-it-services">Software & IT</a>
             <a href="#hire-talent">Hire Talent</a>
             <a href="#submit-cv">Submit CV</a>
             <a href="#contact">Contact</a>

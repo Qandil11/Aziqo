@@ -189,6 +189,7 @@ h1 {
     var(--surface);
 }
 
+.hero-panel a,
 .hero-panel span {
   border-left: 3px solid var(--blue);
   background: var(--white);
@@ -220,6 +221,36 @@ h1 {
 .section-heading {
   max-width: 780px;
   margin-bottom: 36px;
+}
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.pillar-card {
+  min-height: 220px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 24px;
+  background: var(--white);
+}
+
+.pillar-card h3 {
+  margin-bottom: 14px;
+  color: var(--navy);
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.pillar-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.pillar-card:hover {
+  border-color: var(--blue);
 }
 
 .service-grid,
@@ -472,6 +503,7 @@ h1 {
     gap: 34px;
   }
 
+  .pillar-grid,
   .service-grid,
   .sector-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -484,6 +516,7 @@ h1 {
     width: min(100% - 28px, 1120px);
   }
 
+  .pillar-grid,
   .service-grid,
   .sector-grid {
     grid-template-columns: 1fr;
