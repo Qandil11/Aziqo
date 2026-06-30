@@ -14,7 +14,7 @@ const pillars = [
     href: "#recruitment",
     image: "/images/recruitment.jpg",
     description:
-      "Specialist hiring support across accounting, CNC engineering, software and mobile roles.",
+      "Specialist hiring support across security, fire safety, accounting, CNC engineering, software and mobile roles.",
   },
   {
     title: "UK Education Consultancy",
@@ -33,6 +33,17 @@ const pillars = [
 ];
 
 const recruitmentSectors = [
+  {
+    title: "Security & Firefighter Recruitment",
+    roles: [
+      "Security Officers",
+      "Fire Safety Officers",
+      "Fire Wardens",
+      "Firefighters",
+      "Emergency response staff",
+      "Site safety personnel",
+    ],
+  },
   {
     title: "Accounting & Finance Recruitment",
     roles: [
@@ -96,6 +107,7 @@ const softwareServices = [
 ];
 
 const sectorOptions = [
+  "Security & Firefighter Recruitment",
   "Accounting & Finance Recruitment",
   "CNC Engineering",
   "Software Engineering",
@@ -183,7 +195,8 @@ function App() {
               <p>
                 AZIQO supports clients across recruitment, UK education
                 consultancy, and Software & IT services, combining practical
-                business support with strong technology expertise.
+                business support with strong technology expertise. We also work
+                in specialist security and firefighter recruitment.
               </p>
               <div className="hero-actions" aria-label="Primary actions">
                 <a className="button button-primary" href="#hire-talent">
@@ -322,7 +335,8 @@ function App() {
               <p className="lead">
                 Tell us about the role, team and hiring priorities. AZIQO can
                 support hiring across Accounting & Finance, CNC Engineering,
-                Software Engineering and Mobile Engineering roles.
+                Software Engineering, Mobile Engineering, Security and
+                Firefighter roles.
               </p>
             </div>
             <form
@@ -379,9 +393,9 @@ function App() {
               <p className="section-label">Submit CV</p>
               <h2>Share your details for relevant technology opportunities.</h2>
               <p className="lead">
-                If you work across accounting, CNC, software or mobile roles,
-                you can send your details for future opportunities that match
-                your experience and goals.
+                If you work across security, firefighting, accounting, CNC,
+                software or mobile roles, you can send your details for future
+                opportunities that match your experience and goals.
               </p>
             </div>
             <form
@@ -433,7 +447,7 @@ function App() {
                 <input
                   name="role_interested_in"
                   type="text"
-                  placeholder="Accounts Assistant, CNC Miller, Backend Engineer..."
+                  placeholder="Security Officer, Firefighter, CNC Miller..."
                   required
                 />
               </label>
