@@ -9,51 +9,81 @@ const location = "Glasgow, United Kingdom";
 const formspreeEndpoint = "https://formspree.io/f/meewrewp";
 
 const problemAreas = [
-  "Crashes and ANRs affecting user trust",
+  "Mobile app crashes, ANRs and unstable releases",
   "Slow screens, poor UX and performance issues",
-  "Outdated SDKs, APIs and Play Store warnings",
-  "Legacy Java code that needs Kotlin/Compose migration",
+  "Outdated SDKs, APIs and app store warnings",
+  "Legacy Android, iOS or cross-platform code",
   "Previous developer disappeared or handover is unclear",
-  "Firebase Crashlytics, Analytics and CI/CD missing",
-  "Release, compliance or signing issues blocking launch",
+  "Firebase, cloud, analytics and CI/CD missing",
+  "Backend, API or database issues slowing product delivery",
   "AI, OCR or document automation features to add",
+];
+
+const proofPoints = [
+  { value: "Build", label: "new mobile, backend and cloud features" },
+  { value: "Rescue", label: "unstable products, releases and legacy code" },
+  { value: "Scale", label: "systems, automation and engineering teams" },
+];
+
+const visualHighlights = [
+  {
+    title: "Mobile, cloud and API delivery",
+    description:
+      "Connect mobile products with the backend, cloud services and release workflows they need to run reliably.",
+    image: "/images/mobile-cloud-engineering.jpg",
+    alt: "Mobile app connected to cloud backend, APIs and software engineering panels",
+  },
+  {
+    title: "AI automation for real workflows",
+    description:
+      "Use OCR, document capture and structured extraction to reduce manual work inside business processes.",
+    image: "/images/ai-automation-workflow.jpg",
+    alt: "Document automation workflow with mobile OCR capture and structured AI output",
+  },
 ];
 
 const serviceCards = [
   {
-    title: "Android App Rescue",
+    icon: "MR",
+    title: "Mobile App Rescue",
     description:
-      "Stabilise broken, inherited or unreliable Android apps with focused investigation, crash fixes and release-ready improvements.",
+      "Stabilise broken, inherited or unreliable mobile apps with focused investigation, crash fixes and release-ready improvements.",
   },
   {
+    icon: "MM",
     title: "Mobile App Modernisation",
     description:
       "Modernise legacy codebases, improve architecture, upgrade dependencies and prepare apps for long-term maintainability.",
   },
   {
-    title: "Kotlin & Jetpack Compose",
+    icon: "MI",
+    title: "Android, iOS & Cross-Platform",
     description:
-      "Build new Android features with Kotlin, Jetpack Compose, clean UI patterns and practical engineering discipline.",
+      "Build and improve Android, iOS, Flutter, React Native and Kotlin-based mobile products with practical engineering discipline.",
   },
   {
-    title: "Firebase, Analytics & CI/CD",
+    icon: "CB",
+    title: "Cloud, Backend & APIs",
     description:
-      "Set up Crashlytics, Analytics, build pipelines and release workflows so teams can see issues and ship with confidence.",
+      "Support Firebase, backend services, APIs, authentication, databases and cloud integrations that mobile products depend on.",
   },
   {
-    title: "Play Store Release Support",
+    icon: "RC",
+    title: "Release, Analytics & CI/CD",
     description:
-      "Resolve Play Console, API level, policy, signing, testing and compliance issues that delay mobile releases.",
+      "Set up analytics, Crashlytics, build pipelines, monitoring and App Store or Play Store release workflows.",
   },
   {
-    title: "AI Mobile Features",
+    icon: "AI",
+    title: "AI & Automation Features",
     description:
-      "Add useful AI-enabled mobile features such as OCR, document automation, structured extraction and workflow support.",
+      "Add useful AI-enabled features such as OCR, document automation, structured extraction and workflow support.",
   },
   {
-    title: "Ongoing App Maintenance",
+    icon: "OS",
+    title: "Ongoing Software Maintenance",
     description:
-      "Keep Android apps stable after launch with regular updates, monitoring, dependency upgrades and feature support.",
+      "Keep apps, APIs and cloud systems stable after launch with monitoring, upgrades, fixes and feature support.",
   },
 ];
 
@@ -61,7 +91,7 @@ const processSteps = [
   {
     title: "Review",
     description:
-      "We inspect the app, codebase, crashes, Play Console status and delivery risks.",
+      "We inspect the app, backend, cloud setup, analytics, release status and delivery risks.",
   },
   {
     title: "Report",
@@ -71,12 +101,12 @@ const processSteps = [
   {
     title: "Fix or Build",
     description:
-      "AZIQO helps fix urgent issues, modernise the app, build new features or support release.",
+      "AZIQO helps fix urgent issues, modernise systems, build new features or support release.",
   },
 ];
 
 const recruitmentSupport = [
-  "Android, Kotlin and mobile engineering talent",
+  "Mobile, backend and cloud engineering talent",
   "Software engineering, QA, cloud and DevOps roles",
   "Candidate shortlisting with technical understanding",
   "Practical hiring support for startups, agencies and growing teams",
@@ -146,40 +176,68 @@ function App() {
         <section className="hero section" id="home">
           <div className="container hero-grid">
             <div className="hero-copy">
-              <p className="eyebrow">Mobile software consultancy</p>
-              <h1>Android App Rescue, Modernisation & AI Mobile Solutions</h1>
+              <p className="eyebrow">Mobile, cloud and software consultancy</p>
+              <h1>Mobile, Cloud & Software Engineering Solutions</h1>
               <p>
-                AZIQO helps startups, agencies, and growing businesses fix
-                unstable Android apps, modernise legacy code, ship new mobile
-                features, and access specialist engineering talent.
+                AZIQO helps startups, agencies and growing businesses rescue
+                unstable apps, modernise mobile and backend systems, build
+                AI-enabled features, and access specialist engineering talent.
               </p>
               <div className="hero-actions" aria-label="Primary actions">
                 <a className="button button-primary" href="#contact">
-                  Book a Free App Health Check
+                  Book a Free Technical Health Check
                 </a>
                 <a className="button button-secondary" href="#services">
                   View Services
                 </a>
               </div>
             </div>
-            <aside className="hero-panel software-panel" aria-label="AZIQO software focus">
-              <div className="signal-card">
-                <span>Android</span>
-                <strong>Rescue unstable apps</strong>
+            <aside className="hero-visual" aria-label="Mobile and cloud health check visual">
+              <div className="visual-toolbar">
+                <span />
+                <span />
+                <span />
               </div>
-              <div className="signal-card">
-                <span>Kotlin</span>
-                <strong>Modernise legacy code</strong>
+              <div className="phone-mockup">
+                <div className="phone-screen">
+                  <div className="phone-header">
+                    <span>System Health</span>
+                    <strong>92%</strong>
+                  </div>
+                  <div className="metric-row">
+                    <span>Mobile crashes</span>
+                    <strong className="metric-good">-64%</strong>
+                  </div>
+                  <div className="metric-row">
+                    <span>API status</span>
+                    <strong>Ready</strong>
+                  </div>
+                  <div className="pulse-chart" aria-hidden="true">
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                </div>
               </div>
-              <div className="signal-card">
-                <span>AI Mobile</span>
-                <strong>OCR and automation features</strong>
+              <div className="diagnostic-card diagnostic-primary">
+                <span>Mobile + Cloud</span>
+                <strong>Priority fixes identified</strong>
               </div>
-              <div className="signal-card">
-                <span>Release</span>
-                <strong>Crashlytics, CI/CD and Play Store support</strong>
+              <div className="diagnostic-card diagnostic-secondary">
+                <span>Backend</span>
+                <strong>API and data flow mapped</strong>
               </div>
             </aside>
+          </div>
+          <div className="container proof-strip" aria-label="AZIQO proof points">
+            {proofPoints.map((point) => (
+              <div className="proof-item" key={point.value}>
+                <strong>{point.value}</strong>
+                <span>{point.label}</span>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -187,7 +245,7 @@ function App() {
           <div className="container">
             <div className="section-heading">
               <p className="section-label">Common Problems</p>
-              <h2>When a mobile app is slowing the business down, AZIQO helps get it back under control.</h2>
+              <h2>When apps, APIs or cloud systems slow the business down, AZIQO helps get them back under control.</h2>
             </div>
             <div className="problem-grid">
               {problemAreas.map((problem) => (
@@ -200,21 +258,71 @@ function App() {
           </div>
         </section>
 
+        <section className="section image-band" aria-label="AZIQO software visuals">
+          <div className="container image-grid">
+            {visualHighlights.map((visual) => (
+              <article className="image-card" key={visual.title}>
+                <img src={visual.image} alt={visual.alt} loading="lazy" />
+                <div>
+                  <h3>{visual.title}</h3>
+                  <p>{visual.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="section visual-section" aria-label="AZIQO delivery focus">
+          <div className="container delivery-panel">
+            <div className="delivery-copy">
+              <p className="section-label">What AZIQO Helps With</p>
+              <h2>Build, rescue and scale digital products without adding noise.</h2>
+              <p>
+                AZIQO is for businesses that need practical senior engineering
+                help across mobile apps, backend services, cloud delivery and
+                AI-enabled automation.
+              </p>
+              <a className="button button-primary" href="#contact">
+                Discuss Your Project
+              </a>
+            </div>
+            <div className="delivery-stack" aria-hidden="true">
+              <article>
+                <span>01</span>
+                <strong>Build</strong>
+                <p>Mobile apps, APIs, cloud setup and product features.</p>
+              </article>
+              <article>
+                <span>02</span>
+                <strong>Rescue</strong>
+                <p>Crashes, slow screens, broken releases and legacy systems.</p>
+              </article>
+              <article>
+                <span>03</span>
+                <strong>Scale</strong>
+                <p>Automation, analytics, CI/CD, maintenance and hiring support.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
         <section className="section" id="services">
           <div className="container">
             <div className="section-heading">
               <p className="section-label">Services</p>
-              <h2>Focused Android, mobile and AI engineering support.</h2>
+              <h2>Focused mobile, cloud, backend and AI engineering support.</h2>
               <p className="lead">
-                From urgent app rescue to planned modernisation, AZIQO supports
-                businesses that need practical senior engineering input without
-                adding unnecessary complexity.
+                From urgent app rescue to backend, cloud and AI feature work,
+                AZIQO supports businesses that need practical senior engineering
+                input without adding unnecessary complexity.
               </p>
             </div>
             <div className="service-grid">
               {serviceCards.map((service) => (
                 <article className="card service-card" key={service.title}>
-                  <span className="card-marker" aria-hidden="true" />
+                  <span className="service-icon" aria-hidden="true">
+                    {service.icon}
+                  </span>
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>
                 </article>
@@ -268,18 +376,20 @@ function App() {
           <div className="container two-column">
             <div>
               <p className="section-label">About AZIQO</p>
-              <h2>Led by real senior Android engineering experience.</h2>
+              <h2>Led by real senior software engineering experience.</h2>
             </div>
             <div>
               <p className="lead">
-                AZIQO is led by Qandil Tariq, a UK-based Senior Android Engineer
-                with 13+ years of software engineering experience across mobile,
-                product delivery and technical problem solving.
+                AZIQO is led by Qandil Tariq, a UK-based Senior Software
+                Engineer with 13+ years of experience across mobile engineering,
+                backend integration, product delivery and technical problem
+                solving.
               </p>
               <p className="lead">
                 That engineering background shapes the way AZIQO works: beyond
                 keywords, beyond generic advice, and focused on the technical
-                realities that affect app stability, releases, users and teams.
+                realities that affect app stability, cloud systems, releases,
+                users and teams.
               </p>
             </div>
           </div>
@@ -288,11 +398,12 @@ function App() {
         <section className="section cta-section" id="contact">
           <div className="container contact-layout">
             <div>
-              <p className="section-label">Free App Health Check</p>
-              <h2>Get a Free Android App Health Check.</h2>
+              <p className="section-label">Free Technical Health Check</p>
+              <h2>Get a Free Technical Health Check.</h2>
               <p className="lead">
-                Share what is happening with your app, codebase or release. AZIQO
-                will review the situation and suggest a clear next step.
+                Share what is happening with your app, backend, cloud setup or
+                release. AZIQO will review the situation and suggest a clear
+                next step.
               </p>
               <div className="contact-card compact-contact">
                 <p>Email</p>
@@ -313,7 +424,7 @@ function App() {
               method="POST"
               onSubmit={handleFormSubmit}
             >
-              <input type="hidden" name="form_type" value="Android App Health Check" />
+              <input type="hidden" name="form_type" value="Technical Health Check" />
               <label>
                 Name
                 <input name="name" type="text" autoComplete="name" required />
@@ -342,16 +453,16 @@ function App() {
                 </select>
               </label>
               <label>
-                App details
+                Project details
                 <textarea
                   name="message"
                   rows={5}
-                  placeholder="Tell us about the app, issue, deadline, current stack or release blocker."
+                  placeholder="Tell us about the app, backend, cloud setup, issue, deadline, stack or release blocker."
                   required
                 />
               </label>
               <button className="button button-primary" type="submit">
-                Get a Free Android App Health Check
+                Get a Free Technical Health Check
               </button>
             </form>
           </div>
